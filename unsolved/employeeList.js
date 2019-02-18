@@ -41,7 +41,7 @@ const employeeList = [{
 
 ];
 
-// employeeList.name();
+
 
 
 // console.log(employeeList.name);

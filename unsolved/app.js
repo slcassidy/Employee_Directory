@@ -7,10 +7,14 @@ const render = function() {
     // $('.content').empty();
   
     for( let i = 0; i < employeeList.length; i++ ) {
-      $('.content').append(`<p>${this.name[i]}</p>`);
+      $('.content').append(`<p>${employeeList[i].name}</p>`);
     //   console.log(`Employee Name: ${employeeList.name}`);
     }
   }
   
   render();
+
+
+
+  
   
