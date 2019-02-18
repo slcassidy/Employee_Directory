@@ -8,7 +8,8 @@ const render = function() {
   
     // Adding the card to have a box around the names
     for( let i = 0; i < employeeList.length; i++ ) {
-      $('.content').append(`<br> <div class="card boarder" style="width: 18rem;">
+      $('.content').append(`<br> 
+                            <div class="card boarder" style="width: 18rem;">
                                 <p>${employeeList[i].name} </p>
                                 <p>${employeeList[i].officeNum}</p> 
                                 <p>${employeeList[i].phoneNum}</p>
