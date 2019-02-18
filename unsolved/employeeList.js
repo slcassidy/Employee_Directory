@@ -38,4 +38,12 @@ const employeeList = [{
   officeNum: 345,
   phoneNum: '222-789-5231'
 }
+
 ];
+
+// employeeList.name();
+
+
+// console.log(employeeList.name);
+// console.log(employeeList.officeNum);
+// console.log(employeeList.phoneNum);
