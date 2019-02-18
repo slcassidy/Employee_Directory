@@ -13,7 +13,7 @@ const $ = function (selector) {
     }
   }
 
-  // ADD THE BELOW FUNCTIONS
+  // FUNCTIONS
   // 1. A function `addClass` that takes in a className as a string and adds that class to every element in the nodelist. 
   const addClass = function(content){
     for (let i = 0; i < nodeList.length; i++) {
@@ -73,6 +73,18 @@ const $ = function (selector) {
       nodeList[i].addEventListener(evt, cb);
       // evt what we want the event to respond to
       // cb = callback ~Can call it anyting but it will always be the callback
+    }  
+  }
+
+  const show = function(){
+    for (let i = 0; i < nodeList.length; i++) {
+      nodeList[i].style.display = '';
+    }  
+  }
+
+  const hide = function(){
+    for (let i = 0; i < nodeList.length; i++) {
+      nodeList[i].style.display = `none`;
     }  
   }
 
