@@ -100,7 +100,9 @@ const $ = function (selector) {
     empty: empty,
     append: append,
     prepend: prepend,
-    val: val
+    val: val,
+    show: show,
+    hide: hide
 
   };
 }
