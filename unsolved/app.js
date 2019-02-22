@@ -193,7 +193,7 @@ const updateName = function() {
   console.log(OfNum);
   console.log(phNum);
   for (i=0; i < employeeList.length; i++) {
-
+    // Taking into account the case sensetive
     if (employeeList[i].name.toLowerCase() === nameVal.toLowerCase()) {
           employeeList[i].officeNum = OfNum
           employeeList[i].phoneNum = phNum    
@@ -218,7 +218,7 @@ const verifyInfo= function() {
 
   let result = "Not found";
   for (i=0; i < employeeList.length; i++) {
-
+    // Taking into account the case sensetive
     if (employeeList[i].name === nameVal || employeeList[i].name.toLowerCase() === nameVal.toLowerCase()) {
       result = "found"
     }

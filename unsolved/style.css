@@ -10,7 +10,8 @@
 }
 
 a{
-    font-family: 'Anton', sans-serif;
+    font-family: 'Anton', sans-serif, bold;
+    
 }
 
 .list-group{
