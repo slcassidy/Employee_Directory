@@ -1,6 +1,8 @@
 .blue{
     background: #66CCFF;
-    
+    height: 2000px;
+    margin: 0;
+    padding: 0;
   }
 
 .white{
@@ -15,3 +17,9 @@ a{
     text-align: center;
 
 }
+
+/* .row{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+} */

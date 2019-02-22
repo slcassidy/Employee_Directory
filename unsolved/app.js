@@ -14,19 +14,6 @@
 })();
 
 
-// const hideAll = function(){
-//   $(`.content`).hide();
-//   $(`#name`).hide();
-//   $(`#officenum`).hide();
-//   $(`#phoneNum`).hide(); 
-//   $(`#search`).hide();
-//   $('#addRecord').hide();
-//   $('#deleteRecord').hide();  
-//   $('#verifyRecord').hide();
-// };
-
-// hideAll();
-
 const showEmployeeList = function(){
   $(`.content`).show();
   const render = function() {
@@ -49,6 +36,12 @@ const showEmployeeList = function(){
 // Clearning the container where the variables are stored
 const clearContent = function(){
   $('.content').empty('');
+};
+
+const reset = function(){
+  $('#name').val('');
+  $(`#officenum`).val('');
+  $(`#phoneNum`).val(''); 
 };
 
 // Show main variables to search on
@@ -114,6 +107,7 @@ $('#view').on('click',function(){
 
 // Show the view of add once link clicked
 $('#add').on('click', function(){
+  reset()
   showVar()
   showAdd()
   clearContent();
@@ -122,6 +116,7 @@ $('#add').on('click', function(){
 
 // Show the view of delete once link clicked
 $('#delete').on('click', function(){
+  reset()
   showVar()
   showDelete()
   clearContent();
