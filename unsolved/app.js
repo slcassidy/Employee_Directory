@@ -46,10 +46,10 @@ const showEmployeeList = function(){
   
   render();
 }
-
-const match = function(){
-
-}
+// Clearning the container where the variables are stored
+const clearContent = function(){
+  $('.content').empty('');
+};
 
 // Show main variables to search on
 const showVar = function(){
@@ -93,6 +93,7 @@ const showUpdate = function(){
 
 
 // Show the View of the list only
+
 $('#view').on('click',function(){
   $(`#search`).hide();
   $('#addRecord').hide();
@@ -135,8 +136,7 @@ $('#update').on('click',function(){
 
 
 const addName = function() {
-  $('.content').empty();
-
+  clearContent();
   const nameVal = $('#name').val();
   const OfNum =  $('#officenum').val();
   const phNum =  $('#phoneNum').val();
@@ -156,7 +156,7 @@ $('#addRecord').on('click', addName);
 
 
 const removeName = function() {
-  $('.content').empty();
+  clearContent();
   const nameVal = $('#name').val();
   console.log(nameVal);
 // inside for loop
@@ -177,7 +177,7 @@ $('#deleteRecord').on('click', removeName);
 // ------------------------------------------------------------
 
 const updateName = function() {
-  $('.content').empty();
+  clearContent();
   const nameVal = $('#name').val();
   const OfNum =  $('#officenum').val();
   const phNum =  $('#phoneNum').val();
@@ -186,9 +186,7 @@ const updateName = function() {
   console.log(phNum);
   for (i=0; i < employeeList.length; i++) {
 
-    if (employeeList[i].name === nameVal) {
-          // employeeList.splice(i,1)
-          // employeeList.name.splice(i,0,nameVal);   
+    if (employeeList[i].name.toLowerCase() === nameVal.toLowerCase()) {
           employeeList[i].officeNum = OfNum
           employeeList[i].phoneNum = phNum    
     }
@@ -203,27 +201,27 @@ $('#updateRecord').on('click', updateName);
 // ------------------------------------------------------------
 
 const verifyInfo= function() {
-  $('.content').empty();
+  clearContent();
+  // $('.content').show();
   const nameVal = $('#name').val();
 
   console.log(nameVal);
 
-  let result = "employeeNotfound";
+  let result = "Not found";
   for (i=0; i < employeeList.length; i++) {
 
-    if (employeeList[i].name === nameVal) {
-      result = "employeeFound"
+    if (employeeList[i].name === nameVal || employeeList[i].name.toLowerCase() === nameVal.toLowerCase()) {
+      result = "found"
     }
 
-    // else{
-    //   $('.content').append('<p> ${name} false </p>');
-    // }
     
   }
-
-  $('.content').append(`<p> ${result} </p>`);
-  // showEmployeeList();
+  
+  $('.content').append(`<p> ${nameVal} has been ${result} in the employee records </p>`);
   $('.content').show();
+  // showEmployeeList();
+  result ='';
+  $('#name').val(''); 
   
 }
 
