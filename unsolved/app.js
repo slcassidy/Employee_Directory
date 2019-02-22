@@ -100,6 +100,7 @@ $('#view').on('click',function(){
   $('#deleteRecord').hide();  
   $('#verifyRecord').hide();
   $('#updateRecord').hide();
+  clearContent();
   showEmployeeList();
 });
 
@@ -107,6 +108,7 @@ $('#view').on('click',function(){
 $('#add').on('click', function(){
   showVar()
   showAdd()
+  clearContent();
   showEmployeeList()
 });
 
@@ -114,6 +116,7 @@ $('#add').on('click', function(){
 $('#delete').on('click', function(){
   showVar()
   showDelete()
+  clearContent();
   showEmployeeList()
 });
 
@@ -129,6 +132,7 @@ $('#verify').on('click',function(){
 $('#update').on('click',function(){
   showVar()
   showUpdate()
+  clearContent();
   showEmployeeList()
 });
 
