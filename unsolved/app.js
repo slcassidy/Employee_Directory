@@ -47,6 +47,10 @@ const showEmployeeList = function(){
   render();
 }
 
+const match = function(){
+
+}
+
 // Show main variables to search on
 const showVar = function(){
   $(`#name`).show();
@@ -56,9 +60,6 @@ const showVar = function(){
 
 // Show header of selections to add records
 const showAdd = function(){
-  // $(`#name`).show();
-  // $(`#officenum`).show();
-  // $(`#phoneNum`).show(); 
   $('#addRecord').show();
   $('#deleteRecord').hide();
   $('#updateRecord').hide();
@@ -67,9 +68,6 @@ const showAdd = function(){
 
 // Show header of selections to delete records
 const showDelete = function(){
-  // $(`#name`).show();
-  // $(`#officenum`).show();
-  // $(`#phoneNum`).show(); 
   $('#deleteRecord').show();
   $('#addRecord').hide();
   $('#updateRecord').hide();
@@ -78,9 +76,7 @@ const showDelete = function(){
 
 // Show header of selections to verify name of record
 const showVerify = function(){
-  // $(`#name`).show();
-  // $(`#officenum`).hide();
-  // $(`#phoneNum`).hide(); 
+  $(`#name`).show();
   $('#addRecord').hide();
   $('#updateRecord').hide();
   $('#deleteRecord').hide();
@@ -89,9 +85,6 @@ const showVerify = function(){
 
 // Update the header to show
 const showUpdate = function(){
-  // $(`#name`).show();
-  // $(`#officenum`).hide();
-  // $(`#phoneNum`).hide(); 
   $('#addRecord').hide();
   $('#updateRecord').show();
   $('#deleteRecord').hide();
@@ -126,9 +119,9 @@ $('#delete').on('click', function(){
 
 // Show view of item to verify
 $('#verify').on('click',function(){
-  showVar()
+  // showVar()
   showVerify()
-  showEmployeeList()
+  // showEmployeeList()
 });
 
 // show view of the update
@@ -141,9 +134,185 @@ $('#update').on('click',function(){
 
 
 
+const addName = function() {
+  $('.content').empty();
+
+  const nameVal = $('#name').val();
+  const OfNum =  $('#officenum').val();
+  const phNum =  $('#phoneNum').val();
+    console.log(nameVal);
+    console.log(OfNum);
+    console.log(phNum);
+    employeeList.push({name: nameVal, officeNum: OfNum, phoneNum: phNum});
+  
+
+  showEmployeeList();
+
+}
+
+$('#addRecord').on('click', addName);
+// -----------------------------------------------------------
+// $('.content').removeClass(nameVal)
 
 
+const removeName = function() {
+  $('.content').empty();
+  const nameVal = $('#name').val();
+  console.log(nameVal);
+// inside for loop
+  for( let i = 0; i < employeeList.length; i++ ){
+    if(employeeList[i].name === nameVal){
+      console.log(i);
+      employeeList.splice(i,1);
+    }
+    // employeeList.splice(employeeList.indexOf(nameVal), 1);
+  }
 
+  // $('#name').val('');
+  showEmployeeList();  
+}
+
+
+$('#deleteRecord').on('click', removeName);
+// ------------------------------------------------------------
+
+const updateName = function() {
+  $('.content').empty();
+  const nameVal = $('#name').val();
+  const OfNum =  $('#officenum').val();
+  const phNum =  $('#phoneNum').val();
+  console.log(nameVal);
+  console.log(OfNum);
+  console.log(phNum);
+  for (i=0; i < employeeList.length; i++) {
+
+    if (employeeList[i].name === nameVal) {
+          // employeeList.splice(i,1)
+          // employeeList.name.splice(i,0,nameVal);   
+          employeeList[i].officeNum = OfNum
+          employeeList[i].phoneNum = phNum    
+    }
+
+  }
+  showEmployeeList();
+  
+}
+
+
+$('#updateRecord').on('click', updateName);
+// ------------------------------------------------------------
+
+const verifyInfo= function() {
+  $('.content').empty();
+  const nameVal = $('#name').val();
+
+  console.log(nameVal);
+
+  let result = "employeeNotfound";
+  for (i=0; i < employeeList.length; i++) {
+
+    if (employeeList[i].name === nameVal) {
+      result = "employeeFound"
+    }
+
+    // else{
+    //   $('.content').append('<p> ${name} false </p>');
+    // }
+    
+  }
+
+  $('.content').append(`<p> ${result} </p>`);
+  // showEmployeeList();
+  $('.content').show();
+  
+}
+
+
+$('#search').on('click', verifyInfo);
 
   
+
   
+//   console.log('#name');
+//   const oldRecord = employeeList.indexOf('#name');
+//   console.log(oldRecord);
+//   ${employeeList[i].name} 
+// }
+
+// If name matches then yes vs no
+// $('#addRecord').on('click',function(){
+//   $('.container').
+// }
+
+// If name matches then  Delete 
+
+// $('#deleteRecord').on('click',function(){
+//     const change = $('#name');
+//     const oldRecord = employeeList.indexOf(change);
+//     console.log(change);
+//     console.log('#name');
+//     console.log('oldRecord');
+//     if (oldRecord != -1){
+
+//       $('.container').removeClass(oldRecord);  
+//       } 
+//       console.log('.container');
+//     });
+ // 
+
+
+
+// if name matches then push to the bottom of the list **Add
+
+  // let found = employeeList.find(function(element){
+  //   if('#name' === $('.content')){
+  //     return 'Yes';
+  //   }else
+  //     return 'No';
+    
+  // }  
+
+//   console.log(found);
+
+// const showExist = function(){
+//   for( let i = 0; i < employeeList.length; i++ ){
+//     $('.content').push
+//   }
+// }
+
+// for( let i = 0; i < employeeList.length; i++ ) {
+//   $('.content').append(`<br> 
+//                         <div class="card boarder" style="width: 18rem;">
+//                             <p>${employeeList[i].name} </p>
+//                             <p>${employeeList[i].officeNum}</p> 
+//                             <p>${employeeList[i].phoneNum}</p>
+//                         </div> `);
+
+// }
+
+
+
+
+// $('#addRecord').on('click',function(){
+//  if('#name' === )
+
+// });
+// If name matches then update -> based on the entry of the 
+
+// switch (operator) {
+//   case '+':
+//     result = num1 + num2;
+//     break;
+//   case '-':
+//     result = num1 - num2;
+//     break;
+//   case '*':
+//     result = num1 * num2;
+//     break;
+//   case '/':
+//     result = num1 / num2;
+//     break;
+//   case '^':
+//     result = num1 ** num2;
+//     break;
+// }
