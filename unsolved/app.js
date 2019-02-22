@@ -58,6 +58,18 @@ const showVar = function(){
   $(`#phoneNum`).show(); 
 };
 
+// Hidding used for search/updating
+const hideVar = function(){
+  $(`#name`).hide();
+  $(`#officenum`).hide();
+  $(`#phoneNum`).hide();
+  $(`#search`).hide();
+  $('#addRecord').hide();
+  $('#deleteRecord').hide();  
+  $('#verifyRecord').hide();
+  $('#updateRecord').hide(); 
+};
+
 // Show header of selections to add records
 const showAdd = function(){
   $('#addRecord').show();
@@ -95,11 +107,7 @@ const showUpdate = function(){
 // Show the View of the list only
 
 $('#view').on('click',function(){
-  $(`#search`).hide();
-  $('#addRecord').hide();
-  $('#deleteRecord').hide();  
-  $('#verifyRecord').hide();
-  $('#updateRecord').hide();
+  hideVar()
   clearContent();
   showEmployeeList();
 });
@@ -137,7 +145,7 @@ $('#update').on('click',function(){
 });
 
 
-
+// Add Button to add a person
 
 const addName = function() {
   clearContent();
@@ -205,6 +213,7 @@ const updateName = function() {
 $('#updateRecord').on('click', updateName);
 // ------------------------------------------------------------
 // Verify if it exists or not
+
 const verifyInfo= function() {
   clearContent();
   // $('.content').show();
@@ -234,88 +243,3 @@ const verifyInfo= function() {
 $('#search').on('click', verifyInfo);
 
   
-
-  
-//   console.log('#name');
-//   const oldRecord = employeeList.indexOf('#name');
-//   console.log(oldRecord);
-//   ${employeeList[i].name} 
-// }
-
-// If name matches then yes vs no
-// $('#addRecord').on('click',function(){
-//   $('.container').
-// }
-
-// If name matches then  Delete 
-
-// $('#deleteRecord').on('click',function(){
-//     const change = $('#name');
-//     const oldRecord = employeeList.indexOf(change);
-//     console.log(change);
-//     console.log('#name');
-//     console.log('oldRecord');
-//     if (oldRecord != -1){
-
-//       $('.container').removeClass(oldRecord);  
-//       } 
-//       console.log('.container');
-//     });
- // 
-
-
-
-// if name matches then push to the bottom of the list **Add
-
-  // let found = employeeList.find(function(element){
-  //   if('#name' === $('.content')){
-  //     return 'Yes';
-  //   }else
-  //     return 'No';
-    
-  // }  
-
-//   console.log(found);
-
-// const showExist = function(){
-//   for( let i = 0; i < employeeList.length; i++ ){
-//     $('.content').push
-//   }
-// }
-
-// for( let i = 0; i < employeeList.length; i++ ) {
-//   $('.content').append(`<br> 
-//                         <div class="card boarder" style="width: 18rem;">
-//                             <p>${employeeList[i].name} </p>
-//                             <p>${employeeList[i].officeNum}</p> 
-//                             <p>${employeeList[i].phoneNum}</p>
-//                         </div> `);
-
-// }
-
-
-
-
-// $('#addRecord').on('click',function(){
-//  if('#name' === )
-
-// });
-// If name matches then update -> based on the entry of the 
-
-// switch (operator) {
-//   case '+':
-//     result = num1 + num2;
-//     break;
-//   case '-':
-//     result = num1 - num2;
-//     break;
-//   case '*':
-//     result = num1 * num2;
-//     break;
-//   case '/':
-//     result = num1 / num2;
-//     break;
-//   case '^':
-//     result = num1 ** num2;
-//     break;
-// }
