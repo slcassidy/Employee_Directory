@@ -156,7 +156,7 @@ const addName = function() {
 
 $('#addRecord').on('click', addName);
 // -----------------------------------------------------------
-// $('.content').removeClass(nameVal)
+// button to delete a record
 
 
 const removeName = function() {
@@ -179,6 +179,7 @@ const removeName = function() {
 
 $('#deleteRecord').on('click', removeName);
 // ------------------------------------------------------------
+// Button to update variables
 
 const updateName = function() {
   clearContent();
@@ -203,7 +204,7 @@ const updateName = function() {
 
 $('#updateRecord').on('click', updateName);
 // ------------------------------------------------------------
-
+// Verify if it exists or not
 const verifyInfo= function() {
   clearContent();
   // $('.content').show();
